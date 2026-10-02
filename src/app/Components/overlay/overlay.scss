@@ -1,0 +1,36 @@
+.overlay {
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(1.4px);
+
+  z-index: 5;
+
+  // Initial / hidden state
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  // Enter + exit animation
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  // Visible state
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events:auto;
+  }
+}
+
+
+@media(max-width:767px)
+{
+  
+}

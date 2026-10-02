@@ -30,7 +30,8 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/tailwind.css", "src/styles.scss"]
+            "styles": ["src/tailwind.css", "src/styles.scss" ,  "node_modules/primeicons/primeicons.css"
+]
           },
           "configurations": {
             "production": {

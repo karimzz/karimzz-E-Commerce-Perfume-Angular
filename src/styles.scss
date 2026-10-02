@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+
+
+
+// 
+
+:root{
+    --main-color :#4D2952:
+
+    --main-transition : 0.3s;
+}
+
+.container{
+    width: 82%;
+    margin: 0 auto;
+}
+
+
+@media(max-width:767px)
+{
+    .hide-mobile{
+        display: none;
+    }
+
+}

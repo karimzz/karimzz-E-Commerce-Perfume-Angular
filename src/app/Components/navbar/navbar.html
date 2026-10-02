@@ -1,0 +1,154 @@
+<nav>
+  <div class="top-header p-2 px-4 flex items-center justify-between ">
+    <div class="left flex items-center gap-6 hide-mobile">
+      <button class="text-white text-sm font-thin flex items-center gap-2">
+        USD <i class="pi pi-chevron-down text-sm font-thin"></i>
+      </button>
+      <button class="text-white text-sm font-thin flex items-center gap-2">
+        English <i class="pi pi-chevron-down text-sm font-thin"></i>
+      </button>
+    </div>
+    <div class="center">
+      <p class="text-white text-sm font-thin">🔥 Only 11 days left until VALENTINE'S DAY! 🔥</p>
+    </div>
+    <div class="right flex items-center gap-6 hide-mobile ">
+      <p class="text-white text-sm font-thin">Help & Information</p>
+      <p class="text-white text-sm font-thin">Connect with us</p>
+    </div>
+  </div>
+  <div class="center-header pt-5 px-4 flex items-center justify-between">
+    <div
+      class="search-bar flex items-center justify-between border border-zinc-300 rounded-full py-2 px-7 pr-3"
+    >
+      <input
+        type="text"
+        class="text-md focus:outline-0 placeholder:text-sm placeholder:text-zinc-400 hide-mobile"
+        placeholder="Hey, what are you looking for?"
+      />
+      <button class="cursor-pointer focus:outline-0 flex items-center">
+        <i class="pi pi-align-left" (click)="toggleMenu()"></i>
+        <i class="pi pi-search"></i>
+      </button>
+    </div>
+    <div class="logo">
+      <!-- <img src="./images/logo.png" alt="" /> -->
+    </div>
+    <div class="links flex items-center gap-5">
+      <a href="" class="flex items-center font-normal text-sm gap-3"
+        ><i class="pi pi-user big-icon"></i>
+        <p class="hide-mobile">My Account</p>
+      </a>
+      <a href="" class="flex items-center font-normal text-sm gap-3"
+        ><i class="pi pi-heart big-icon"></i>
+        <p class="hide-mobile">My Account</p>
+      </a>
+      <a href="" class="flex items-center font-normal text-sm gap-3"
+        ><i class="pi pi-shopping-bag big-icon"></i>
+        <p class="underline hide-mobile">2 items</p></a
+      >
+    </div>
+  </div>
+
+  <div class="bottom-header h-20 border-b-2 relative border-b-zinc-100 hide-mobile">
+    <div class="container gap-15 flex items-center justify-center">
+      @for (tab of navTabs(); track tab.label) {
+        <div
+          (click)="activeTabHandler(tab.label)"
+          class="link active text-lg font-semibold cursor-pointer"
+          [ngClass]="{ active: activeTab() == tab.label }"
+        >
+          <p>{{ tab.label }}</p>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="drop-downk absolute hide-mobile" [ngClass]="{ showMenu: MenuState() }">
+    <div class="container relative px-17 flex justify-between pt-10 pb-20">
+
+      @for (parent of navDropDown(); track parent.label) {
+        <div class="col flex flex-col gap-5">
+          <div class="row">
+            <h4 class="font-bold text-lg">{{ parent.label }}</h4>
+          </div>
+          @for (parChild of parent.children; track parChild.label) {
+            <div class="row">
+              <a [routerLink]="parChild.route">{{ parChild.label }}</a>
+            </div>
+          }
+        </div>
+      }
+      
+      <button (click)="hideMenu()" class="close-btn font-bold text-xl bg-white rounded-full w-12 h-12 border-2 cursor-pointer border-zinc-200 absolute">
+        X
+      </button>
+    </div>
+
+
+  </div>
+
+  <aside class="shadow-2xl bg-gray-400 " [class.showAside]=" MenuState()">
+    <div class="top flex items-center justify-between p-5">
+      <button class="text-white text-2xl">
+          <i class="pi pi-align-left text-gray-300"></i>
+      </button>
+
+      <h3 class="text-white text-xl">Menu</h3>
+      <button class="text-white text-xl cursor-pointer" (click)="hideMenu()">
+        <i class="pi pi-plus "></i>
+      </button>
+    </div>
+    
+    <div class="tabs flex flex-col ">
+      @for(tab of navTabs();track tab.label)
+      {
+        <button class="tab flex cursor-pointer justify-between mb-0.5 border-0 bg-white items-center p-5  ">
+          <p class="font-semibold text-md">{{tab.label}}</p>
+          <i class="pi pi-chevron-right  text-black"></i>
+        </button>
+      }
+
+      <button class="tab flex cursor-pointer gap-3  mt-4 mb-0.5 border-0 bg-white items-center p-5  ">
+        <i class="pi pi-user big-icon"></i>
+          <p class="font-semibold text-md">My Account</p>
+      </button>
+      <button class="tab flex cursor-pointer gap-3  mb-0.5 border-0 bg-white items-center p-5  ">
+        <i class="pi pi-heart big-icon"></i>
+          <p class="font-semibold text-md">Whishlist (0)</p>
+      </button>
+      <button class="tab flex cursor-pointer gap-3  mb-0.5 border-0 bg-white items-center p-5  ">
+          <div class="relative">
+            <i class="pi pi-shopping-bag big-icon"></i>
+            <p class="absolute num-cart text-xs text-white font-bold rounded-full flex justify-center items-center">2</p>
+          </div>
+          <p class="font-semibold text-md">2 items</p>
+      </button>
+
+      <div class="tab p-5 py-2 pt-8">
+        <button class="border-b border-b-black cursor-pointer">
+        Currency: EGP
+      </button>
+      </div>
+      <div class="tab p-5 py-2">
+        <button class="border-b border-b-black cursor-pointer">
+        Language: English
+      </button>
+      </div>
+      <div class=" tab flex gap-2 p-5 py-2">
+        <img src="./images/egypt.png" class="flag" alt="">
+        <button class="border-b border-b-black cursor-pointer">
+          Change Country
+        </button>
+      </div>
+
+      <div class="tab p-5 py-8">
+        <button class=" cursor-pointer">
+        Help & Information
+      </button>
+      </div>
+      
+
+      
+    </div>
+  </aside>
+</nav>

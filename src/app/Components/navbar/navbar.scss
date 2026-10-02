@@ -1,0 +1,254 @@
+nav {
+  z-index: 6;
+  position: sticky;
+  background-color: white;
+  .top-header {
+    background-color: #4d2952;
+  }
+
+  .pi-chevron-down {
+    font-size: 0.7rem;
+  }
+
+  .big-icon {
+    font-size: 1.6rem;
+  }
+
+  .center-header {
+    .logo {
+      width: 18rem;
+      height: 3rem;
+      object-fit: contain;
+      background-image: url(./../../../../public/images/logo.png);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    .search-bar {
+      width: 33rem;
+      height: 2.8rem;
+      max-width: 100%;
+      input {
+        width: 93%;
+      }
+
+      .pi-align-left{
+        display: none;
+      }
+      .pi {
+        align-self: end;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .bottom-header {
+    .container {
+      height: 100%;
+      width: 64rem;
+      max-width: 100%;
+    }
+    .link {
+      font-weight: 500;
+      color: #383838;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+
+      // font-size: 1rem;
+
+      p {
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: #383838;
+        transition: 0.3s;
+      }
+
+      &.active {
+        &::before {
+          content: '';
+          position: absolute;
+          width: 0%;
+          height: 0.15rem;
+          background-color: #000000;
+          bottom: calc(0% - 0.15rem);
+          animation: moveArrow 0.3s forwards;
+        }
+
+        p {
+          color: #000000;
+        }
+      }
+
+      @keyframes moveArrow {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 120%;
+        }
+      }
+    }
+  }
+
+  .drop-downk {
+    top: 100%;
+    right: 50%;
+    width: 100%;
+    z-index: 5;
+    background-color: white;
+    transform: translateX(50%);
+    // display: none;
+    opacity: 0;
+    pointer-events: none;
+    height: 0%;
+    opacity: 0;
+    transition: 0.3s;
+    visibility: hidden;
+
+    &.showMenu {
+      height: auto;
+      visibility: visible;
+      animation: showMenuAnimation 0.3s forwards;
+    }
+
+    .container {
+      // width: 64rem;
+      width: 71rem;
+      max-width: 100%;
+
+      .close-btn {
+        bottom: -5rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  aside{
+    display: none;
+  }
+}
+
+@keyframes showMenuAnimation {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  100% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+// For Mobile{
+@media (max-width: 767px) {
+  nav{
+
+    .top-header {
+      justify-content: center;
+      border-bottom: 0.1rem solid white;
+    }
+  
+    .center-header {
+      background-color: #4d2952;
+      padding: 0.8rem  1rem;
+  
+      .logo {
+        width: 10rem !important;
+      height: 1.8rem !important;
+        max-width: 100%;
+     
+        // height: 3rem;
+        object-fit: contain;
+        background-image: url(./../../../../public/images/logo.png);
+        background-size: 100% 100%;
+        filter: brightness(0) invert(1);
+        background-repeat: no-repeat;
+      }
+  
+      .search-bar {
+        justify-content: center;
+        width: 2rem !important;
+        height: 2.8rem;
+        max-width: 100%;
+        border: none;
+        input {
+          width: 93%;
+        }
+        
+        button{
+          gap: 0.5rem;
+        }
+  
+        .pi-align-left{
+          display: block !important;
+        }
+        .pi {
+         color: white;
+        }
+      }
+  
+      .links{
+        gap: 0.6rem;
+        a{
+          color: white;
+          font-weight: 100;
+        }
+      }
+    }
+  
+    aside{
+      display: block ;
+      position: absolute;
+      width: 20rem;
+      height: 100vh;
+      overflow-y: scroll;
+      scrollbar-color: transparent ;
+      scrollbar-width:none;
+      background-color: #f0f0f0;
+      left: -100%;
+      top: 0;
+      transition: .3s;
+      
+      &.showAside{
+        left: 0;
+      }
+
+      .top{
+        height: 4rem;
+        background-color: #4d2952;
+
+        .pi{
+          font-size: 1.6rem;
+        }
+
+        .pi-plus {
+          transform: rotate(45deg);
+        }
+      }
+
+      .tab{
+        .num-cart{
+          width: 1.3rem;
+          height: 1.3rem;
+          top: -30%;
+          right: -35%;
+          background-color: #be5c76;
+        }
+        .flag{
+          width: 2rem;
+          object-fit: contain;
+        }
+      }
+
+      .pi-chevron-down{
+        font-size: 1rem;
+      }
+
+    }
+  }
+}
