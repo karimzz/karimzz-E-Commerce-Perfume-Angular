@@ -6,6 +6,11 @@ export const routes: Routes = [
   {
     path: '',
     component: GuestLayout,
-    children: [],
+    children: [
+      {
+        path :"",
+        loadComponent : ()=>import("./Components/home/home").then((c)=>c.Home)
+      }
+    ],
   },
 ];
