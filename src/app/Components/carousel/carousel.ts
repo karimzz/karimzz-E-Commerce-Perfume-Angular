@@ -8,5 +8,5 @@ import { CarouselModule } from 'primeng/carousel';
   templateUrl: `./carousel.html`,
 })
 export class CarouselComponent {
-  items = [1, 2, 3, 4, 5];
+  items = ["./images/banner.png","./images/banner2.jpg","./images/banner1.jpg","./images/banner3.jpg"];
 }
