@@ -90,6 +90,8 @@ export class RecommendedProduct {
     
   ];
 
+  hideMenu = input<boolean>(false);
+
   sectionName = input('Recommended for you');
 
   responsiveOptions: any[] | undefined;
