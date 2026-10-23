@@ -1,0 +1,29 @@
+:host ::ng-deep .p-carousel-indicator-list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0;
+  display: none;
+}
+
+
+// Start Recommended Product
+:host ::ng-deep .card-item img{
+  width: 70%;
+}
+
+:host ::ng-deep .p-carousel-item-list{
+  gap: 3rem;
+}
+
+:host ::ng-deep .p-carousel-item{
+  flex: 1 0 21% !important;
+}
+
+.card-item {
+  button{
+    height: 3rem;
+  }
+}
+// End Recommended Product

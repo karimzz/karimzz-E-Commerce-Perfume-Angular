@@ -1,20 +1,61 @@
 <section class="home">
-    <div class="top-bar  py-1 md:p-2">
-        <div class="container flex justify-center items-center gap-18">
-            <div class="left flex items-center">
-                <p class="font-bold text-lg ">25% OFF - sitewide - </p>
-                <a href="" class="font-semibold pl-2 underline">click here</a>
-            </div>
-            <div class="centre hide-mobile">
-                <p class="bg-white rounded-full font-bold p-2 text-s w-10 h-10 flex items-center justify-center">OR</p>
-            </div>
-            <div class="right flex items-center hide-mobile">
-                <p class="font-bold text-lg ">Free Shipping $100 min - </p>
-                <a href="" class="font-semibold pl-2 underline">click here</a>
-            </div>
-        </div>
+  <div class="top-bar py-1 md:p-2">
+    <div class="container flex justify-center items-center gap-18">
+      <div class="left flex items-center">
+        <p class="font-bold text-lg">25% OFF - sitewide -</p>
+        <a href="" class="font-semibold pl-2 underline">click here</a>
+      </div>
+      <div class="centre hide-mobile">
+        <p
+          class="bg-white rounded-full font-bold p-2 text-s w-10 h-10 flex items-center justify-center"
+        >
+          OR
+        </p>
+      </div>
+      <div class="right flex items-center hide-mobile">
+        <p class="font-bold text-lg">Free Shipping $100 min -</p>
+        <a href="" class="font-semibold pl-2 underline">click here</a>
+      </div>
     </div>
-    <div class="container">
-        <app-carousel />
+  </div>
+  <div class="container">
+    <app-carousel />
+
+    <div class="banner">
+      <a href="#" class="flex justify-center items-center">
+        <img class="w-full" src="./images/Frame_banner.png" alt="" />
+      </a>
     </div>
+
+    <div class="my-20 gap-4 shop-all flex flex-col justify-center items-center sm:my-8 md:my-10 lg:my-20">
+      <h2 class="uppercase text-3xl font-bold">Shop Our COLLECTION</h2>
+      <p class="text-black text-md">Our delicious, limited-edition collection</p>
+      <button class="border-3 px-15 py-3 mt-2 cursor-pointer font-bold text-lg border-zinc-400">
+        SHOP ALL
+      </button>
+    </div>
+
+    <div class="list-card">
+        @for (item of ProductCategoryList; track item.title) {
+            <div class="products-card">
+            <img [src]="item.img" alt="" />
+            <div class="text-con flex flex-col justify-center items-center gap-2.5">
+                <h4 class="text-4xl text-white font-light">{{item.title}}</h4>
+                <a class="underline mt-3 text-white font-light" href="">{{item.buttonTitle}}</a>
+            </div>
+            </div>
+        }
+    </div>
+
+    <app-recommended-product sectionName="Recommended for you" [productList]="products" />
+    <app-recommended-product sectionName="NEW Arrivals!" [productList]="products2" />
+
+    <a class="block gift-image w-full" routerLink="/perfumes" ></a>
+
+    <div class="flex my-5 gap-5">
+      <a href="" class="img1 w-full"></a>
+      <a href="" class="img2 w-full"></a>
+    </div>
+    
+  </div>
 </section>

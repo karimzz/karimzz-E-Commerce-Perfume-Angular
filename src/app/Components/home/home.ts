@@ -1,10 +1,200 @@
+import { ProductCategory } from './../../Core/models/ProductCategory';
 import { Component } from '@angular/core';
 import { CarouselComponent } from '../carousel/carousel';
+import { RecommendedProduct } from '../recommended-product/recommended-product';
+import { Product } from '../../Core/models/Product.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [CarouselComponent],
+  imports: [CarouselComponent, RecommendedProduct, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {}
+
+
+export class Home {
+
+  ProductCategoryList : ProductCategory[] = [
+    {
+      title : "Women’s perfume",
+      buttonTitle : "Shop now",
+      img:"./images/products/p1.png"
+    },
+    {
+      title : "men’s cologne",
+      buttonTitle : "Shop now",
+      img:"./images/products/p2.png"
+    },
+    {
+      title : "Haircare ",
+      buttonTitle : "Shop now",
+      img:"./images/products/p3.png"
+    },
+    {
+      title : "skincare",
+      buttonTitle : "Shop now",
+      img:"./images/products/p4.png"
+    },
+    {
+      title : "gift sets",
+      buttonTitle : "Shop now",
+      img:"./images/products/p5.png"
+    },
+    {
+      title : "best sellers",
+      buttonTitle : "Shop now",
+      img:"./images/products/p6.png"
+    } 
+     
+  ]
+
+  products : Product[]  = [
+      {
+        id: '1000',
+        code: 'f230fh0g3',
+        name: 'Bvlgari Extreme',
+        description: 'Product Description',
+        image: './images/recommeded-product/p1.png',
+        price: 65,
+        madeBy : "Ahmed",
+        category: 'Accessories',
+        brand :"Luminizing Clay",
+        quantity: 24,
+        inventoryStatus: 'INSTOCK',
+        rating: 5,
+      },
+      {
+        id: '1000',
+        code: 'f230fh0g3',
+        name: 'Jo Malone Vetiver & Go...',
+        description: 'Product Description',
+        image: './images/recommeded-product/p2.png',
+        price: 65,
+        madeBy : "Ahmed",
+        category: 'Accessories',
+        brand :"Luminizing Clay",
+        quantity: 24,
+        inventoryStatus: 'INSTOCK',
+        rating: 5,
+      },
+      {
+        id: '1000',
+        code: 'f230fh0g3',
+        name: 'Armaf Passionby Armafh',
+        description: 'Product Description',
+        image: './images/recommeded-product/p3.png',
+        price: 65,
+        category: 'Accessories',
+        quantity: 24,
+        brand :"Luminizing Clay",
+        inventoryStatus: 'INSTOCK',
+        rating: 5,
+      },
+      {
+        id: '1000',
+        code: 'f230fh0g3',
+        name: 'Jo Malone Vetiver & Go...',
+        description: 'Product Description',
+        image: './images/recommeded-product/p4.png',
+        price: 65,
+        madeBy : "Ipsa",
+        category: 'Accessories',
+        quantity: 24,
+        brand :"Luminizing Clay",
+        inventoryStatus: 'INSTOCK',
+        rating: 5,
+      },
+      {
+        id: '1000',
+        code: 'f230fh0g3',
+        name: 'Bamboo Watch',
+        description: 'Product Description',
+        image: './images/recommeded-product/p1.png',
+        price: 65,
+        madeBy : "Ahmed",
+        category: 'Accessories',
+        brand :"Luminizing Clay",
+        quantity: 24,
+        
+        inventoryStatus: 'INSTOCK',
+        rating: 5,
+      },
+      
+    ];
+
+    products2 : Product[] = [
+      {
+        id: '1000',
+        code: 'f230fh0g3',
+        name: 'Bvlgari Extreme',
+        description: 'Product Description',
+        image: './images/Recommended-product1/p1.png',
+        price: 65,
+        madeBy : "Ahmed",
+        category: 'Accessories',
+        brand :"Luminizing Clay",
+        quantity: 24,
+        inventoryStatus: 'INSTOCK',
+        rating: 5,
+      },
+      {
+        id: '1000',
+        code: 'f230fh0g3',
+        name: 'Jo Malone Vetiver & Go...',
+        description: 'Product Description',
+        image: './images/Recommended-product1/p2.png',
+        price: 65,
+        madeBy : "Ahmed",
+        category: 'Accessories',
+        brand :"Luminizing Clay",
+        quantity: 24,
+        inventoryStatus: 'INSTOCK',
+        rating: 5,
+      },
+      {
+        id: '1000',
+        code: 'f230fh0g3',
+        name: 'Armaf Passionby Armafh',
+        description: 'Product Description',
+        image: './images/Recommended-product1/p3.png',
+        price: 65,
+        category: 'Accessories',
+        quantity: 24,
+        brand :"Luminizing Clay",
+        inventoryStatus: 'INSTOCK',
+        rating: 5,
+      },
+      {
+        id: '1000',
+        code: 'f230fh0g3',
+        name: 'Jo Malone Vetiver & Go...',
+        description: 'Product Description',
+        image: './images/Recommended-product1/p4.png',
+        price: 65,
+        madeBy : "Ipsa",
+        category: 'Accessories',
+        quantity: 24,
+        brand :"Luminizing Clay",
+        inventoryStatus: 'INSTOCK',
+        rating: 5,
+      },
+      {
+        id: '1000',
+        code: 'f230fh0g3',
+        name: 'Bamboo Watch',
+        description: 'Product Description',
+        image: './images/Recommended-product1/p1.png',
+        price: 65,
+        madeBy : "Ahmed",
+        category: 'Accessories',
+        brand :"Luminizing Clay",
+        quantity: 24,
+        
+        inventoryStatus: 'INSTOCK',
+        rating: 5,
+      },
+      
+    ];
+
+}
